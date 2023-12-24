@@ -1,13 +1,12 @@
 import React from "react";
 import { useRef } from "react";
-import { useCoordinatesContext } from "../../Context/coordinatesContext";
+import useCoordinateContext from "../../hooks/useCoordinateContext";
 
 function SideBar() {
   const latInputRef = useRef();
   const lonInputRef = useRef();
-  const { coordinates, addCoordinates } = useCoordinatesContext();
+  const { coordinates, addCoordinates } = useCoordinateContext();
 
- 
   return (
     <section className="col-span-4 lg:col-span-3 bg-slate-800 p-7 pt-12 sm:h-full h-fit ">
       <h1 className="text-2xl lg:text-4xl text-center text-slate-100 w-full">
@@ -53,12 +52,12 @@ function SideBar() {
               lat: {lat}, lon: {lon}
             </li>
           ))}
-           <button
-        onClick={submitHandler}
-        className="bg-teal-500 text-slate-50 text-2xl p-2 rounded-md shadow-md block w-full "
-      >
-        خروج
-      </button>
+        <button
+          onClick={submitHandler}
+          className="bg-teal-500 text-slate-50 text-2xl p-2 rounded-md shadow-md block w-full "
+        >
+          خروج
+        </button>
       </ul>
     </section>
   );

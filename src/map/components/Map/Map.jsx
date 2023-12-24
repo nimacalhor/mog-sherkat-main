@@ -1,5 +1,5 @@
 import React from "react";
-import LocationMarker from "./LocationMarker";
+import LocationMarker from "../LocationMarker";
 
 import "leaflet";
 import {  TileLayer, MapContainer } from "react-leaflet";

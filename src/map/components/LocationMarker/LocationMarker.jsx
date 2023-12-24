@@ -1,11 +1,11 @@
 import { Popup, Marker, useMapEvents } from "react-leaflet";
-import { useCurrentCoordinates } from "../../Context/currentCoordinatesContext";
-import { useCoordinatesContext } from "../../Context/coordinatesContext";
+import useCurrentCoordinatesContext from "../../hooks/useCurrentCoordinatesContext";
+import useCoordinateContext from "../../hooks/useCoordinateContext";
 import { useEffect } from "react";
 
 function LocationMarker() {
-  const { currentCoordinates, setCurrentCoordinates } = useCurrentCoordinates();
-  const { addCoordinates } = useCoordinatesContext();
+  const { currentCoordinates, setCurrentCoordinates } = useCurrentCoordinatesContext();
+  const { addCoordinates } = useCoordinateContext();
 
   const map = useMapEvents({
     click(e) {
